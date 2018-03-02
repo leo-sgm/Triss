@@ -9,7 +9,7 @@ setup(name='Triss',
 	packages=find_packages(),
 	entry_points={
         'console_scripts': [
-            'Triss4 = Triss.Triss:run',
+            'Triss = Triss.Triss:run',
         ]
     },
 )
