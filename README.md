@@ -9,6 +9,13 @@ cd Triss
 pip install -e --user .
 ```
 
+or (work now)
+```
+pip install -e .
+```
+
+> not work now:
+
 or ```pip install --user .``` and etc...
 
 edit config.py to provide path to your scripts
