@@ -8,15 +8,19 @@ import subprocess
 import time
 from curses import wrapper
 
-from . import config as tc
+# from . import config as tc
+from Triss.config import PATH_TO_SCRIPTS
+from Triss.config import BaseConfig
+
+from Triss.helper import list_available_commands
 
 locale.setlocale(locale.LC_ALL, '')
 code = locale.getpreferredencoding()
-cmds = os.listdir(tc.PATH_TO_SCRIPTS)
+cmds = list_available_commands(PATH_TO_SCRIPTS)
 icmd = -404
 
 
-def main(stdscr):
+def main(stdscr, config=BaseConfig()):
     curses.noecho()
     curses.curs_set(0)  # turn of the cursor
     height, width = stdscr.getmaxyx()
@@ -66,8 +70,9 @@ def main(stdscr):
 
 
 def run():
-    wrapper(main)
+    config = BaseConfig()
+    wrapper(main, config)
 
     if icmd != -404:
-        cmd = str(tc.PATH_TO_SCRIPTS + cmds[icmd])
+        cmd = str(PATH_TO_SCRIPTS + cmds[icmd])
         subprocess.call(cmd)
