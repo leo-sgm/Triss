@@ -19,6 +19,19 @@ code = locale.getpreferredencoding()
 cmds = list_available_commands(PATH_TO_SCRIPTS)
 icmd = -404
 
+class Triss(object):
+    def __init__(self):
+        pass
+
+    def handler(self):
+        pass
+    
+    def run(self):
+        pass
+
+    def draw(self):
+        pass
+
 
 def main(stdscr, config=BaseConfig()):
     curses.noecho()
